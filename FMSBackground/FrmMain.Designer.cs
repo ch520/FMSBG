@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.menuMain = new System.Windows.Forms.MenuStrip();
-            this.menu_System = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_System_Password = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_System_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Window = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Window_CloseAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Window_CloseOther = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Help = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Help_About = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Help_Help = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMain = new System.Windows.Forms.ToolStrip();
             this.tool_User = new System.Windows.Forms.ToolStripButton();
             this.tool_Dep = new System.Windows.Forms.ToolStripButton();
@@ -50,90 +40,12 @@
             this.lblCurrentUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssLink = new System.Windows.Forms.ToolStripStatusLabel();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.menuMain.SuspendLayout();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuMain
-            // 
-            this.menuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_System,
-            this.menu_Window,
-            this.menu_Help});
-            this.menuMain.Location = new System.Drawing.Point(0, 0);
-            this.menuMain.Name = "menuMain";
-            this.menuMain.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuMain.Size = new System.Drawing.Size(1031, 28);
-            this.menuMain.TabIndex = 7;
-            this.menuMain.Text = "menuStrip1";
-            // 
-            // menu_System
-            // 
-            this.menu_System.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_System_Password,
-            this.menu_System_Exit});
-            this.menu_System.Name = "menu_System";
-            this.menu_System.Size = new System.Drawing.Size(70, 24);
-            this.menu_System.Text = "系统(&S)";
-            // 
-            // menu_System_Password
-            // 
-            this.menu_System_Password.Name = "menu_System_Password";
-            this.menu_System_Password.Size = new System.Drawing.Size(181, 26);
-            this.menu_System_Password.Text = "修改密码(&P)";
-            this.menu_System_Password.Click += new System.EventHandler(this.menu_System_Password_Click);
-            // 
-            // menu_System_Exit
-            // 
-            this.menu_System_Exit.Name = "menu_System_Exit";
-            this.menu_System_Exit.Size = new System.Drawing.Size(181, 26);
-            this.menu_System_Exit.Text = "退出(&X)";
-            this.menu_System_Exit.Click += new System.EventHandler(this.tool_Quit_Click);
-            // 
-            // menu_Window
-            // 
-            this.menu_Window.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_Window_CloseAll,
-            this.menu_Window_CloseOther});
-            this.menu_Window.Name = "menu_Window";
-            this.menu_Window.Size = new System.Drawing.Size(76, 24);
-            this.menu_Window.Text = "窗口(&W)";
-            // 
-            // menu_Window_CloseAll
-            // 
-            this.menu_Window_CloseAll.Name = "menu_Window_CloseAll";
-            this.menu_Window_CloseAll.Size = new System.Drawing.Size(226, 26);
-            this.menu_Window_CloseAll.Text = "关闭所有窗口(&A)";
-            this.menu_Window_CloseAll.Click += new System.EventHandler(this.menu_Window_CloseAll_Click);
-            // 
-            // menu_Window_CloseOther
-            // 
-            this.menu_Window_CloseOther.Name = "menu_Window_CloseOther";
-            this.menu_Window_CloseOther.Size = new System.Drawing.Size(226, 26);
-            this.menu_Window_CloseOther.Text = "除此之外全部关闭(&O)";
-            // 
-            // menu_Help
-            // 
-            this.menu_Help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_Help_About,
-            this.menu_Help_Help});
-            this.menu_Help.Name = "menu_Help";
-            this.menu_Help.Size = new System.Drawing.Size(73, 24);
-            this.menu_Help.Text = "帮助(&H)";
-            // 
-            // menu_Help_About
-            // 
-            this.menu_Help_About.Name = "menu_Help_About";
-            this.menu_Help_About.Size = new System.Drawing.Size(135, 26);
-            this.menu_Help_About.Text = "关于(&A)";
-            // 
-            // menu_Help_Help
-            // 
-            this.menu_Help_Help.Name = "menu_Help_Help";
-            this.menu_Help_Help.Size = new System.Drawing.Size(135, 26);
-            this.menu_Help_Help.Text = "帮助(&F)";
             // 
             // toolMain
             // 
@@ -143,9 +55,12 @@
             this.tool_Dep,
             this.tool_Role,
             this.tool_Function,
+            this.toolStripSeparator2,
+            this.toolStripButton1,
+            this.toolStripButton2,
             this.toolStripSeparator1,
             this.tool_Quit});
-            this.toolMain.Location = new System.Drawing.Point(0, 28);
+            this.toolMain.Location = new System.Drawing.Point(0, 0);
             this.toolMain.Name = "toolMain";
             this.toolMain.Size = new System.Drawing.Size(1031, 39);
             this.toolMain.TabIndex = 8;
@@ -240,12 +155,34 @@
             this.dockPanel.DockRightPortion = 200D;
             this.dockPanel.DockTopPortion = 150D;
             this.dockPanel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-            this.dockPanel.Location = new System.Drawing.Point(0, 67);
+            this.dockPanel.Location = new System.Drawing.Point(0, 39);
             this.dockPanel.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.RightToLeftLayout = true;
-            this.dockPanel.Size = new System.Drawing.Size(1031, 590);
+            this.dockPanel.Size = new System.Drawing.Size(1031, 618);
             this.dockPanel.TabIndex = 18;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Black;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(105, 36);
+            this.toolStripButton1.Text = "修改密码";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Black;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(105, 36);
+            this.toolStripButton2.Text = "关于我们";
             // 
             // FrmMain
             // 
@@ -255,14 +192,11 @@
             this.Controls.Add(this.dockPanel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolMain);
-            this.Controls.Add(this.menuMain);
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "智能1603";
             this.Load += new System.EventHandler(this.FrmMain_Load);
-            this.menuMain.ResumeLayout(false);
-            this.menuMain.PerformLayout();
             this.toolMain.ResumeLayout(false);
             this.toolMain.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -273,17 +207,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuMain;
-        private System.Windows.Forms.ToolStripMenuItem menu_System;
-        private System.Windows.Forms.ToolStripMenuItem menu_System_Password;
-        private System.Windows.Forms.ToolStripMenuItem menu_System_Exit;
-        private System.Windows.Forms.ToolStripMenuItem menu_Window;
-        private System.Windows.Forms.ToolStripMenuItem menu_Window_CloseAll;
-        private System.Windows.Forms.ToolStripMenuItem menu_Window_CloseOther;
-        private System.Windows.Forms.ToolStripMenuItem menu_Help;
-        private System.Windows.Forms.ToolStripMenuItem menu_Help_About;
-        private System.Windows.Forms.ToolStripMenuItem menu_Help_Help;
         private System.Windows.Forms.ToolStrip toolMain;
         private System.Windows.Forms.ToolStripButton tool_User;
         private System.Windows.Forms.ToolStripButton tool_Dep;
@@ -295,5 +218,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblCurrentUser;
         private System.Windows.Forms.ToolStripStatusLabel tssLink;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

@@ -53,6 +53,7 @@
             this.tvFunctionTree.Name = "tvFunctionTree";
             this.tvFunctionTree.Size = new System.Drawing.Size(444, 576);
             this.tvFunctionTree.TabIndex = 0;
+            this.tvFunctionTree.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvFunctionTree_AfterCheck);
             this.tvFunctionTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvFunctionTree_NodeMouseClick);
             // 
             // btYes

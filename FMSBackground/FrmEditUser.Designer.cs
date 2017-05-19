@@ -44,7 +44,7 @@
             this.grpRser.Size = new System.Drawing.Size(338, 457);
             this.grpRser.TabIndex = 0;
             this.grpRser.TabStop = false;
-            this.grpRser.Text = "可编辑用户";
+            this.grpRser.Text = "可添加用户";
             // 
             // tvindUser
             // 
@@ -98,7 +98,7 @@
             this.Controls.Add(this.grpRser);
             this.Name = "FrmEditUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "编辑相关用户";
+            this.Text = "添加相关用户";
             this.Load += new System.EventHandler(this.FrmEditUser_Load);
             this.grpRser.ResumeLayout(false);
             this.ResumeLayout(false);

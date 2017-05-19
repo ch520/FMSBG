@@ -14,15 +14,17 @@ namespace FMSBackground
 {
     public partial class FrmRole : BaseForm
     {
-       
-        
+
+        TreeNode _selectedNode = null;
         RoleLogic _roleLogic = new RoleLogic();
         UserLogic _userLogic = new UserLogic();
         FunctionLogic _functionLogic = new FunctionLogic();
         List<int > _lis = new List<int>();
         List<int> _lisUser = new List<int>();
         int _roleID = 0;
-        
+        Role _role = new Role();
+        UserRoleLogic _userroleFunction = new UserRoleLogic();
+        List<User > _deleteUser = new List<User >();
         List<int> _ruid = new List<int>();
 
 
@@ -65,10 +67,12 @@ namespace FMSBackground
         {
             Role r = e.Node.Tag as Role;
             if (r == null) return;
+            _role = r;
+            _selectedNode = e.Node;
+            lstUser.Tag = r;
             //FrmEditTree fet = new FrmEditTree(r.RoleID);                                      //_seleNode = e.Node;
-            lisRole.Items.Clear();
             SeleUser(r);//显示可编辑用户
-            lstFunction.Items.Clear();
+           
             SeleFunction(r);
             
             _roleID = r.RoleID;
@@ -81,6 +85,7 @@ namespace FMSBackground
 
         private void InitFunctionTree(Role r)
         {
+            lstFunction.Items.Clear();
             List<Function> list = _functionLogic.GetRoleFunction(r.RoleID);
             if (list == null) return;
             _lis.Clear();
@@ -94,12 +99,15 @@ namespace FMSBackground
 
         private void SeleUser(Role r)
         {
+            lstUser.Items.Clear();
             List<User> list = _userLogic.GetUsersByRID(r.RoleID);
             if (list == null) return;
             _lisUser.Clear();
             foreach (var u in list)
             {
-                lisRole.Items.Add(u.UserRealName);
+                lstUser.Items.Add(u);
+                lstUser.Tag = u;
+                _deleteUser.Add(u);
                 _lisUser.Add(u.UserID);
             }
         }
@@ -110,10 +118,40 @@ namespace FMSBackground
             fet.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btup_Click(object sender, EventArgs e)
+        {
+            User u = lstUser.SelectedItem as User;
+            if (u == null) return;
+
+            UserRole ur = new UserRole(u.UserID, _roleID);
+            _userroleFunction.DeleteRoleUser(ur);
+            lstUser.Items.Clear();
+            
+            SeleUser(_role);
+        }
+
+        private void btse_Click(object sender, EventArgs e)
         {
             FrmEditUser fdu = new FrmEditUser(_lisUser, _roleID);
-            fdu.ShowDialog();
+            if(fdu.ShowDialog()== DialogResult.OK)
+            {
+                if (_selectedNode == null) return;
+                Role r = _selectedNode.Tag as Role;
+                SeleUser(r);
+            }
+        }
+
+        private void lisRole_Click(object sender, EventArgs e)
+        {
+           User u = lstUser.Tag as User;
+            foreach (var t in _deleteUser) {
+                
+                //if(t.UserID ==sender.)
+                //{
+                //    _userId = t.UserID;
+                //}
+            }                      
         }
     }
 }
+

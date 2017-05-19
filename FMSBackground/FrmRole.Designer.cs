@@ -30,8 +30,8 @@
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lisRole = new System.Windows.Forms.ListBox();
+            this.btse = new System.Windows.Forms.Button();
+            this.lstUser = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btsele = new System.Windows.Forms.Button();
             this.lstFunction = new System.Windows.Forms.ListBox();
@@ -56,8 +56,8 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.lisRole);
+            this.groupBox4.Controls.Add(this.btse);
+            this.groupBox4.Controls.Add(this.lstUser);
             this.groupBox4.Location = new System.Drawing.Point(1032, 15);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
@@ -77,29 +77,30 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "移除";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btup_Click);
             // 
-            // button3
+            // btse
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(76, 720);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 29);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "编辑";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btse.Location = new System.Drawing.Point(76, 720);
+            this.btse.Margin = new System.Windows.Forms.Padding(4);
+            this.btse.Name = "btse";
+            this.btse.Size = new System.Drawing.Size(100, 29);
+            this.btse.TabIndex = 3;
+            this.btse.Text = "添加";
+            this.btse.UseVisualStyleBackColor = true;
+            this.btse.Click += new System.EventHandler(this.btse_Click);
             // 
-            // lisRole
+            // lstUser
             // 
-            this.lisRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lisRole.FormattingEnabled = true;
-            this.lisRole.ItemHeight = 15;
-            this.lisRole.Location = new System.Drawing.Point(12, 18);
-            this.lisRole.Margin = new System.Windows.Forms.Padding(4);
-            this.lisRole.Name = "lisRole";
-            this.lisRole.Size = new System.Drawing.Size(272, 694);
-            this.lisRole.TabIndex = 2;
+            this.lstUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lstUser.FormattingEnabled = true;
+            this.lstUser.ItemHeight = 15;
+            this.lstUser.Location = new System.Drawing.Point(12, 18);
+            this.lstUser.Margin = new System.Windows.Forms.Padding(4);
+            this.lstUser.Name = "lstUser";
+            this.lstUser.Size = new System.Drawing.Size(272, 694);
+            this.lstUser.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -286,8 +287,8 @@
         #endregion
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListBox lisRole;
+        private System.Windows.Forms.Button btse;
+        private System.Windows.Forms.ListBox lstUser;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btsele;
         private System.Windows.Forms.ListBox lstFunction;

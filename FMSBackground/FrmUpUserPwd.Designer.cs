@@ -59,6 +59,7 @@
             // 
             this.texRealPwd.Location = new System.Drawing.Point(149, 123);
             this.texRealPwd.Name = "texRealPwd";
+            this.texRealPwd.PasswordChar = '*';
             this.texRealPwd.Size = new System.Drawing.Size(217, 25);
             this.texRealPwd.TabIndex = 1;
             // 
@@ -83,6 +84,7 @@
             // 
             this.texNewPwd.Location = new System.Drawing.Point(149, 81);
             this.texNewPwd.Name = "texNewPwd";
+            this.texNewPwd.PasswordChar = '*';
             this.texNewPwd.Size = new System.Drawing.Size(217, 25);
             this.texNewPwd.TabIndex = 1;
             // 

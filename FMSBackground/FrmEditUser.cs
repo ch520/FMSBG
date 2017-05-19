@@ -17,12 +17,15 @@ namespace FMSBackground
         UserRoleLogic _userRoleLogic = new UserRoleLogic();
         UserLogic _userLogin = new UserLogic();
         List<int> _uid = new List<int>();
-        int _id = 0;
-        public FrmEditUser(List <int> lis,int id)
+        List<int> _deleUser = new List<int>();
+        int _rid = 0;
+       
+        List<User> _lisuser = new List<User>();
+        public FrmEditUser(List<int> lis, int rid)
         {
             InitializeComponent();
             _lis = lis;
-            _id = id;
+            _rid = rid;
         }
 
         private void FrmEditUser_Load(object sender, EventArgs e)
@@ -37,14 +40,16 @@ namespace FMSBackground
         private void AddChildNode(TreeNode pNode)
         {
             List<User> list = _userLogin.GetUsers();
+
             foreach (var u in list)
             {
                 TreeNode node = pNode.Nodes.Add(u.UserRealName);
+                node.Tag = u;
                 foreach (int r in _lis)
                 {
                     if (r == u.UserID)
                     {
-                        node.Checked = true;
+                        node.Remove();
                     }
                 }
 
@@ -54,12 +59,12 @@ namespace FMSBackground
 
         private void btNo_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.Cancel;
         }
 
         private void chkSele_CheckedChanged(object sender, EventArgs e)
         {
-            setChildNodeCheckedState(tvindUser .Nodes[0], chkSele.Checked);
+            setChildNodeCheckedState(tvindUser.Nodes[0], chkSele.Checked);
         }
         public void setChildNodeCheckedState(TreeNode currNode, bool state)
         {
@@ -73,20 +78,26 @@ namespace FMSBackground
 
         private void btYes_Click(object sender, EventArgs e)
         {
-            foreach (var t in _uid)
+            
+            foreach (var t in _deleUser)
             {
-                UserRole  rf = new UserRole(_id,t);
+                UserRole rf = new UserRole( t,_rid);
                 _userRoleLogic.AddUsrRole(rf);
             }
+            DialogResult = DialogResult.OK;
+          
         }
-
         private void tvindUser_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            UserRole  f = e.Node.Tag as UserRole;
-            if (e.Node .Checked)
+            User f = e.Node.Tag as User;
+
+            if (e.Node.Checked)
             {
-                _uid.Add(f.UserID );
+                _deleUser.Add(f.UserID);
+
             }
         }
+       
     }
-}
+ }
+

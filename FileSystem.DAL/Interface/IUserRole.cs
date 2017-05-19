@@ -9,5 +9,6 @@ namespace FileSystem.DAL
    public interface IUserRole : IService
     {
         bool AddRoleUser(UserRole ur);
+        bool DeleteRoleUser(int rid, int uid);
     }
 }

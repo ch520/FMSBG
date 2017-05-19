@@ -14,5 +14,9 @@ namespace FileSystem.BLL
             return Service.AddRoleUser(ur);
 
         }
+        public bool DeleteRoleUser(UserRole ur)
+        {
+            return Service.DeleteRoleUser(ur.RoleID ,ur.UserID );
+        }
     }
 }

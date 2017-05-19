@@ -114,5 +114,11 @@ namespace FMSBackground
             FrmUpUserPwd fup = new FrmUpUserPwd();
             fup.ShowDialog();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmUpUserPwd fup = new FrmUpUserPwd();
+            fup.ShowDialog();
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace FileSystem.Entity
         public string UserMobile { get; set; }
         public override string ToString()
         {
-            return UserName ;
+            return String.Format("{0}({1})",UserName,UserRealName) ;
         }
     }
 }

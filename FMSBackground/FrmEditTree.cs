@@ -22,6 +22,7 @@ namespace FMSBackground
         List<int> _deleFunction = new List<int>();
         bool _yes = true;
         int _rid = 0;
+        List<Function> _lisfun = new List<Function>();
         public FrmEditTree(List <int> lis,int rid)
         {
             
@@ -121,11 +122,12 @@ namespace FMSBackground
 
         private void btYes_Click(object sender, EventArgs e)
         {
+            
             if (_yes)
             {
-                foreach (var f in _fid)
+                foreach (var f in _lisfun )
                 {
-                    Role_Function rf = new Role_Function(_rid, f);
+                    Role_Function rf = new Role_Function(_rid, f.FunctionID );
                     _roleFunction.AddRoleFunction(rf);
                 }
 
@@ -137,7 +139,22 @@ namespace FMSBackground
                     _roleFunction.DeleteRoleFunction(rf);
                 }
             }
+            _lisfun.Clear();
             this.Close();
+        }
+
+        private void tvFunctionTree_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            Function f = e.Node.Tag as Function;
+            if(e.Node .Checked)
+            {
+                
+                _lisfun.Add(f);
+            }
+            if(!e.Node .Checked)
+            {
+                _lisfun.Remove(f);
+            }
         }
     }
 }
